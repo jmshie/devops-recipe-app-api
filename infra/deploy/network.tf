@@ -116,7 +116,7 @@ resource "aws_subnet" "private_b" {
 resource "aws_security_group" "endpoint_access" {
   description = "Access to endpoints"
   name        = "${local.prefix}-endpoint-access"
-  vpc_id      = aws_vpc.main.owner_id
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     cidr_blocks = [aws_vpc.main.cidr_block]
